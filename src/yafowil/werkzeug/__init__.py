@@ -6,15 +6,15 @@ from yafowil.base import (
     factory,
 )
 
-# XXX
-get_localizer = None
+
+get_localizer = None # XXX
 
 
 class WerkzeugRequestAdapter(DictMixin):
-    
+
     def __init__(self, request):
         self.request = request
-        
+
     def __getitem__(self, key):
         if key in self.request.form:
             value = self.request.form[key]
@@ -37,19 +37,19 @@ class WerkzeugRequestAdapter(DictMixin):
 
     def __setitem__(self, key, item):
         raise AttributeError('read only, __setitem__ is not supported')
-    
+
     def __delitem__(self, key):
         raise AttributeError('read only, __delitem__ is not supported')
 
 
 class TranslateCallable(object):
-    
+
     def __init__(self, data):
         if isinstance(data.request, WerkzeugRequestAdapter):
             self.request = data.request.request
         else:
             self.request = data.request
-        
+
     def __call__(self, msg):
         return msg
 

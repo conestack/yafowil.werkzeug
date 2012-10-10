@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.0.1'
+version = '0.1'
 shortdesc = 'Werkzeug Integration for YAFOWIL'
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'HISTORY.rst')).read()
@@ -17,7 +17,7 @@ setup(name='yafowil.werkzeug',
             'Programming Language :: Python',
             'Topic :: Software Development',
             'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
-            'License :: OSI Approved :: BSD License',                        
+            'License :: OSI Approved :: BSD License',
       ],
       keywords='werkzeug request response html input widgets',
       author='BlueDynamics Alliance',
